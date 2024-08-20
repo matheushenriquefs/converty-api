@@ -1,7 +1,6 @@
 import env from '#start/env'
 import app from '@adonisjs/core/services/app'
 import { defineConfig, services } from '@adonisjs/drive'
-import { type JWTInput, type ExternalAccountClientOptions } from 'google-auth-library'
 
 const driveConfig = defineConfig({
   default: env.get('DRIVE_DISK'),
@@ -18,7 +17,6 @@ const driveConfig = defineConfig({
       visibility: 'public',
     }),
     gcs: services.gcs({
-      credentials: env.get('GCS_KEY') as JWTInput | ExternalAccountClientOptions,
       bucket: env.get('GCS_BUCKET'),
       visibility: 'public',
     }),
