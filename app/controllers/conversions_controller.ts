@@ -5,14 +5,9 @@ import { storeConversionValidator } from '#validators/conversion'
 
 export default class ConversionsController {
   /**
-   * Display a list of resource
-   */
-  async index({}: HttpContext) {}
-
-  /**
    * Handle form submission for the create action
    */
-  async store({ request }: HttpContext) {
+  async handle({ request }: HttpContext) {
     const payload = await request.validateUsing(storeConversionValidator)
     const makeConversionService = new MakeConversionService()
 
@@ -20,19 +15,4 @@ export default class ConversionsController {
 
     return response
   }
-
-  /**
-   * Show individual record
-   */
-  async show({ params }: HttpContext) {}
-
-  /**
-   * Handle form submission for the edit action
-   */
-  // async update({ params, request }: HttpContext) {}
-
-  /**
-   * Delete record
-   */
-  async destroy({ params }: HttpContext) {}
 }

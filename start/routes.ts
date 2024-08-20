@@ -17,6 +17,6 @@ router.get('/', async () => {
 
 router
   .group(() => {
-    router.resource('conversions', '#controllers/conversions_controller').apiOnly()
+    router.post('conversions', '#controllers/conversions_controller.handle')
   })
   .prefix('v1')
