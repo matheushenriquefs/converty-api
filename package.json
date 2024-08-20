@@ -28,6 +28,8 @@
     "#entities/*": "./app/entities/*.js",
     "#adapters/*": "./app/adapters/*.js",
     "#factories/*": "./app/factories/*.js",
+    "#clients/*": "./app/clients/*.js",
+    "#repositories/*": "./app/repositories/*.js",
     "#providers/*": "./providers/*.js",
     "#types/*": "./types/*.js",
     "#database/*": "./database/*.js",
@@ -62,6 +64,7 @@
     "@adonisjs/lucid": "^21.1.1",
     "@google-cloud/storage": "^7.12.1",
     "@vinejs/vine": "^2.1.0",
+    "firebase-admin": "^12.3.1",
     "luxon": "^3.5.0",
     "reflect-metadata": "^0.2.2"
   },
