@@ -1,6 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
-import { StoreConversionService } from '#services/store_conversion_service'
+import { MakeConversionService } from '#services/make_conversion_service'
 import { storeConversionValidator } from '#validators/conversion'
 
 export default class ConversionsController {
@@ -14,11 +14,11 @@ export default class ConversionsController {
    */
   async store({ request }: HttpContext) {
     const payload = await request.validateUsing(storeConversionValidator)
-    const storeConversionService = new StoreConversionService()
+    const makeConversionService = new MakeConversionService()
 
-    await storeConversionService.handle(payload)
+    const response = await makeConversionService.handle(payload)
 
-    return {}
+    return response
   }
 
   /**
