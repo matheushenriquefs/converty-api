@@ -30,7 +30,7 @@ export interface LogExtractorContract {
   getHeader(): string
 }
 
-export interface LogFactory {
+export interface LogFactoryContract {
   createReader(): LogReaderContract
   createExtractor(): LogExtractorContract
 }
