@@ -14,3 +14,9 @@ router.get('/', async () => {
     hello: 'world',
   }
 })
+
+router
+  .group(() => {
+    router.resource('conversions', '#controllers/conversions_controller').apiOnly()
+  })
+  .prefix('v1')
