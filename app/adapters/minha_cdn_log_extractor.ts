@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 
 import { Log } from '#entities/log'
-import { type Provider, LogExtractor } from '#types/log'
+import { type Provider, LogExtractorContract } from '#types/log'
 
 enum CacheStatus {
   HIT = 'HIT',
@@ -9,7 +9,7 @@ enum CacheStatus {
   REFRESH_HIT = 'REFRESH_HIT',
 }
 
-export class MinhaCDNLogExtractor implements LogExtractor {
+export class MinhaCDNLogExtractor implements LogExtractorContract {
   private pattern: RegExp =
     /(\d+)\|(\d+)\|(\w+)\|"(GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH) ([^ ]+) HTTP\/\d(?:\.\d)?"\|(\d+(?:\.\d+)?)/
   private provider: Provider = 'minha-cdn'

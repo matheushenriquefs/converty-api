@@ -1,7 +1,7 @@
 import { type PathLike } from 'node:fs'
 import { type FileHandle } from 'node:fs/promises'
 
-import { type Log as LogEntity } from '#entities/log'
+import { type Log } from '#entities/log'
 
 export type Provider = 'minha-cdn'
 
@@ -21,20 +21,20 @@ type BasePath = PathLike | FileHandle
 
 export type Path = string | BasePath | URL
 
-export interface LogReader {
+export interface LogReaderContract {
   read(path: Path): Promise<NodeJS.ReadableStream | null>
 }
 
-export interface LogExtractor {
-  extract(content: string): LogEntity | null
+export interface LogExtractorContract {
+  extract(content: string): Log | null
   getHeader(): string
 }
 
 export interface LogFactory {
-  createReader(): LogReader
-  createExtractor(): LogExtractor
+  createReader(): LogReaderContract
+  createExtractor(): LogExtractorContract
 }
 
-export interface Log {
+export interface LogContract {
   toString(): string
 }

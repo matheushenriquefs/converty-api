@@ -1,6 +1,6 @@
-import { Log as LogInterface, type Metadata } from '#types/log'
+import { LogContract, type Metadata } from '#types/log'
 
-export class Log implements LogInterface {
+export class Log implements LogContract {
   private provider: string
   private cacheStatus: string
   private metadata: Metadata
