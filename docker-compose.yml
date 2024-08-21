@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  converty-api:
+    platform: linux/amd64
+    build: .
+    image: converty-api
+    container_name: converty-api
+    working_dir: /app
+    ports:
+      - 3333:3333
+      - 8080:8080
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: sh ./entrypoint.sh
+    networks:
+      - converty
+
+networks:
+  converty:
+    driver: bridge
