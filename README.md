@@ -36,6 +36,12 @@ Start the development server using Docker Compose.
 docker compose up
 ```
 
+Setup requireed firebase credentials.
+
+```sh
+docker exec -it converty-api node ace firebase:credentials
+```
+
 ## Testing The Application
 
 You can test the endpoint with the following request.

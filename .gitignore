@@ -23,3 +23,6 @@ yarn-error.log
 
 # Platform specific
 .DS_Store
+
+config/firebase/service_account.json
+config/firebase/firebase_config.json
