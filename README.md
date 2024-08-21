@@ -56,6 +56,14 @@ You can test the endpoint with the following request.
 }'
 ```
 
+## Running Functional Tests
+
+You can test the endpoint with the following request.
+
+```sh
+docker exec -it converty-api npm run test
+```
+
 ### Type-Check, Compile and Minify for Production
 
 To prepare the project for production, run:
