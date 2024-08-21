@@ -36,7 +36,7 @@ Start the development server using Docker Compose.
 docker compose up
 ```
 
-Setup requireed firebase credentials.
+Setup required firebase credentials.
 
 ```sh
 docker exec -it converty-api node ace firebase:credentials
