@@ -8,7 +8,7 @@ type ConstructorParams = {
 }
 
 export class Conversion {
-  id: ConstructorParams['url']
+  id: ConstructorParams['id']
   url: ConstructorParams['url']
   sourceUrls: ConstructorParams['sourceUrls']
   createdAt: ConstructorParams['createdAt']
