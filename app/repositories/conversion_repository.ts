@@ -16,6 +16,7 @@ export class ConversionRepository {
     const snapshot = await ref.get()
 
     return new Conversion({
+      id: ref.id,
       url: snapshot.get('url'),
       sourceUrls: snapshot.get('source_urls'),
       createdAt: snapshot.get('created_at'),
